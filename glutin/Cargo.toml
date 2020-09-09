@@ -14,7 +14,7 @@ categories = ["gui"]
 debug = ["iced_winit/debug"]
 
 [dependencies]
-glutin = "0.24"
+glutin = { version = "0.24", git = "https://github.com/Tarnadas/glutin.git" }
 
 [dependencies.iced_native]
 version = "0.2"

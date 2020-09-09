@@ -146,7 +146,7 @@ where
 
     let window = settings
         .window
-        .into_builder(&title, mode, event_loop.primary_monitor())
+        .into_builder(&title, mode, event_loop.primary_monitor().unwrap())
         .build(&event_loop)
         .map_err(Error::WindowCreationFailed)?;
 
@@ -225,7 +225,7 @@ where
 
                 if mode != new_mode {
                     window.set_fullscreen(conversion::fullscreen(
-                        window.current_monitor(),
+                        window.current_monitor().unwrap(),
                         new_mode,
                     ));
 

@@ -55,7 +55,7 @@ where
         let builder = settings.window.into_builder(
             &title,
             mode,
-            event_loop.primary_monitor(),
+            event_loop.primary_monitor().unwrap(),
         );
 
         let context = ContextBuilder::new()
@@ -150,7 +150,7 @@ where
 
                 if mode != new_mode {
                     context.window().set_fullscreen(conversion::fullscreen(
-                        context.window().current_monitor(),
+                        context.window().current_monitor().unwrap(),
                         new_mode,
                     ));
 
