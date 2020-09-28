@@ -133,7 +133,7 @@ pub fn fullscreen(
     match mode {
         Mode::Windowed => None,
         Mode::Fullscreen => {
-            Some(winit::window::Fullscreen::Borderless(monitor))
+            Some(winit::window::Fullscreen::Borderless(Some(monitor)))
         }
     }
 }
@@ -299,9 +299,9 @@ pub fn key_code(virtual_keycode: winit::event::VirtualKeyCode) -> KeyCode {
         winit::event::VirtualKeyCode::Numpad9 => KeyCode::Numpad9,
         winit::event::VirtualKeyCode::AbntC1 => KeyCode::AbntC1,
         winit::event::VirtualKeyCode::AbntC2 => KeyCode::AbntC2,
-        winit::event::VirtualKeyCode::Add => KeyCode::Add,
         winit::event::VirtualKeyCode::Apostrophe => KeyCode::Apostrophe,
         winit::event::VirtualKeyCode::Apps => KeyCode::Apps,
+        winit::event::VirtualKeyCode::Asterisk => KeyCode::Asterisk,
         winit::event::VirtualKeyCode::At => KeyCode::At,
         winit::event::VirtualKeyCode::Ax => KeyCode::Ax,
         winit::event::VirtualKeyCode::Backslash => KeyCode::Backslash,
@@ -310,8 +310,6 @@ pub fn key_code(virtual_keycode: winit::event::VirtualKeyCode) -> KeyCode {
         winit::event::VirtualKeyCode::Colon => KeyCode::Colon,
         winit::event::VirtualKeyCode::Comma => KeyCode::Comma,
         winit::event::VirtualKeyCode::Convert => KeyCode::Convert,
-        winit::event::VirtualKeyCode::Decimal => KeyCode::Decimal,
-        winit::event::VirtualKeyCode::Divide => KeyCode::Divide,
         winit::event::VirtualKeyCode::Equals => KeyCode::Equals,
         winit::event::VirtualKeyCode::Grave => KeyCode::Grave,
         winit::event::VirtualKeyCode::Kana => KeyCode::Kana,
@@ -325,7 +323,6 @@ pub fn key_code(virtual_keycode: winit::event::VirtualKeyCode) -> KeyCode {
         winit::event::VirtualKeyCode::MediaSelect => KeyCode::MediaSelect,
         winit::event::VirtualKeyCode::MediaStop => KeyCode::MediaStop,
         winit::event::VirtualKeyCode::Minus => KeyCode::Minus,
-        winit::event::VirtualKeyCode::Multiply => KeyCode::Multiply,
         winit::event::VirtualKeyCode::Mute => KeyCode::Mute,
         winit::event::VirtualKeyCode::MyComputer => KeyCode::MyComputer,
         winit::event::VirtualKeyCode::NavigateForward => {
@@ -336,13 +333,18 @@ pub fn key_code(virtual_keycode: winit::event::VirtualKeyCode) -> KeyCode {
         }
         winit::event::VirtualKeyCode::NextTrack => KeyCode::NextTrack,
         winit::event::VirtualKeyCode::NoConvert => KeyCode::NoConvert,
+        winit::event::VirtualKeyCode::NumpadAdd => KeyCode::Add,
         winit::event::VirtualKeyCode::NumpadComma => KeyCode::NumpadComma,
+        winit::event::VirtualKeyCode::NumpadDecimal => KeyCode::Decimal,
+        winit::event::VirtualKeyCode::NumpadDivide => KeyCode::Divide,
         winit::event::VirtualKeyCode::NumpadEnter => KeyCode::NumpadEnter,
         winit::event::VirtualKeyCode::NumpadEquals => KeyCode::NumpadEquals,
+        winit::event::VirtualKeyCode::NumpadMultiply => KeyCode::Multiply,
         winit::event::VirtualKeyCode::NumpadSubtract => KeyCode::Subtract,
         winit::event::VirtualKeyCode::OEM102 => KeyCode::OEM102,
         winit::event::VirtualKeyCode::Period => KeyCode::Period,
         winit::event::VirtualKeyCode::PlayPause => KeyCode::PlayPause,
+        winit::event::VirtualKeyCode::Plus => KeyCode::Plus,
         winit::event::VirtualKeyCode::Power => KeyCode::Power,
         winit::event::VirtualKeyCode::PrevTrack => KeyCode::PrevTrack,
         winit::event::VirtualKeyCode::RAlt => KeyCode::RAlt,
